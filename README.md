@@ -64,7 +64,7 @@ Below are demonstration scenarios showing the project in action, with placeholde
 
 Jobs were successfully added to the queue and listed under the **Pending** state.
 
-🖼️ *Job Enqueued Successfully Screenshot*
+(https://github.com/VishalS-14/QueueCTL/blob/main/Enqueue.png)
 
 ```bash
 echo '{"id":"job1","command":"echo Hello from job1"}' | python queuectl.py enqueue
