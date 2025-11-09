@@ -66,9 +66,7 @@ Jobs were successfully added to the queue and listed under the **Pending** state
 
 ![Job Enqueue](https://github.com/VishalS-14/QueueCTL/blob/9c00b44fb4658afac3c3376a50448f6b298cc3c4/Enqueue.png)
 
-```bash
-echo '{"id":"job1","command":"echo Hello from job1"}' | python queuectl.py enqueue
-```
+
 ### 👷 **Worker Execution & Job Processing**
 
 This section explains how **QueueCTL’s Worker System** manages background jobs — including how it executes commands, handles failures, performs retries using exponential backoff, and updates job states in real-time.
@@ -84,57 +82,28 @@ Each worker runs in its own process and operates safely alongside others using t
 ---
 
 ## ▶️ **Starting Worker Processes**
-
-Start one or more worker processes using the CLI:
-
-```bash
-python queuectl.py worker start --count 2
-```
-### 💀 Failed Job Retries & DLQ Movement
-
-When a job fails, QueueCTL automatically retries it using **exponential backoff** —  
-each retry waits longer than the last attempt.  
-
-If the job keeps failing after all retries, it moves to the **Dead Letter Queue (DLQ)**  
-where failed jobs are stored safely for later review or manual retry.
-
-🖼️ **Screenshot 1 — Job Retrying with Backoff Delay**  
-*(Insert screenshot here)*
-
-🖼️ **Screenshot 2 — Job Moved to Dead Letter Queue (DLQ)**  
-*(Insert screenshot here)*
-
-This ensures no job is lost — temporary failures get retried,  
-and permanent ones go to DLQ for inspection or reprocessing.
+![Workers assigned](https://github.com/VishalS-14/QueueCTL/blob/0054851d4a727240aa60ed6863d4907a610c4ad7/workers_assigned.png)
 
 ### ⚰️ Dead Letter Queue (DLQ) Listing
 
 The **Dead Letter Queue** stores jobs that permanently failed after all retry attempts.  
 You can list all DLQ jobs using:
 
-```bash
-python queuectl.py dlq list
-```
+![DLQ list](https://github.com/VishalS-14/QueueCTL/blob/0054851d4a727240aa60ed6863d4907a610c4ad7/dlq_list.png)
 
 ### 🔁 Retried Job from DLQ to Pending
 
 Jobs in the **Dead Letter Queue (DLQ)** can be retried manually by moving them back to the **pending** state.  
 Use the command below to requeue a DLQ job:
 
-```bash
-python queuectl.py dlq retry <job_id>
-```
+![dead state to pending](https://github.com/VishalS-14/QueueCTL/blob/0054851d4a727240aa60ed6863d4907a610c4ad7/dlq_retry.png)
 
 ### ⚙️ Multiple Jobs Running Concurrently
 
 QueueCTL supports running **multiple worker processes** to handle several jobs at once.  
 Each worker picks different jobs from the queue, allowing true parallel job execution.
 
-Start multiple workers using:
-
-```bash
-python queuectl.py worker start --count 3
-```
+![Multiple jobs](https://github.com/VishalS-14/QueueCTL/blob/0054851d4a727240aa60ed6863d4907a610c4ad7/multiple_jobs.png)
 
 ### ⚙️ Config Management — Max Retries Updated
 
@@ -152,9 +121,5 @@ python queuectl.py config set backoff_base 3
 The **System Status** command shows a real-time summary of all jobs and active workers.  
 It helps you monitor how many jobs are **pending**, **processing**, **completed**, **failed**, or in the **DLQ**.
 
-Check system status using:
-
-```bash
-python queuectl.py status
-```
+![Status](https://github.com/VishalS-14/QueueCTL/blob/0054851d4a727240aa60ed6863d4907a610c4ad7/final_status.png)
 
