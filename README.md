@@ -54,13 +54,10 @@ It provides a **CLI-driven workflow** and an optional **web-based dashboard** to
 
 ---
 
-##  **Demonstration & Screenshots**
-
-Below are demonstration scenarios showing the project in action, with placeholders for screenshots.
-
+##  **Demonstration**
 ---
 
-### **1️ Job Enqueued Successfully**
+### **Job Enqueued Successfully**
 
 Jobs were successfully added to the queue and listed under the **Pending** state.
 
@@ -78,7 +75,7 @@ Each worker runs in its own process and operates safely alongside others using t
 ---
 
 
-### ⚰️ Dead Letter Queue (DLQ) Listing
+###  Dead Letter Queue (DLQ) Listing
 
 The **Dead Letter Queue** stores jobs that permanently failed after all retry attempts.  
 
@@ -125,7 +122,6 @@ QueueCTL comes with a built-in **Web Dashboard** that lets you monitor all your 
 It provides a clean, auto-refreshing interface to visualize job activity without needing to check the CLI constantly.
 
 ![Web_dashboard](https://github.com/VishalS-14/QueueCTL/blob/0e77bfdfd864c33bb68da37d30ff4d913e32eb68/dash.png)
-![Web_dashboard](https://github.com/VishalS-14/QueueCTL/blob/0e77bfdfd864c33bb68da37d30ff4d913e32eb68/dash2.png)
 
 ---
 
@@ -134,17 +130,14 @@ It provides a clean, auto-refreshing interface to visualize job activity without
 - **Database:** Stores all jobs and configurations persistently in SQLite.  
 - **Workers:** Independently execute jobs, apply retries, and handle failures.  
 - **DLQ:** Stores permanently failed jobs for later review or reprocessing.  
-- **Dashboard:** Provides real-time system visibility via a web interface.  
+- **Dashboard:** Provides real-time system visibility via a web interface.
+- 
 ---
 
 ##  Conclusion
 
-**QueueCTL** is built to make background job processing simple, reliable, and transparent.  
-It combines a powerful **CLI**, intelligent **retry and DLQ system**, and a real-time **web dashboard** —  
-all working together seamlessly with no external dependencies.
-
-Whether you’re running a single worker or scaling up for parallel jobs,  
-QueueCTL ensures every task is tracked, retried when needed, and monitored with clarity.
+**QueueCTL** is built to make background job processing simple, reliable, and transparent. It combines a powerful **CLI**, intelligent **retry and DLQ system**, and a real-time **web dashboard** — all working together seamlessly with no external dependencies.
+Whether you’re running a single worker or scaling up for parallel jobs, QueueCTL ensures every task is tracked, retried when needed, and monitored with clarity.
 
  **Reliable** — no job gets lost, even on failure  
  **Configurable** — control retry limits, backoff timing, and more  
