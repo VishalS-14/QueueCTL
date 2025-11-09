@@ -110,12 +110,8 @@ Each worker picks different jobs from the queue, allowing true parallel job exec
 QueueCTL lets you update configuration settings like **max retries** and **backoff base** directly from the CLI.  
 These settings control how many times a job will retry and how long it waits between retries.
 
-Update configuration using:
+![configuration updated](https://github.com/VishalS-14/QueueCTL/blob/630ed3854e51f2b60855e918c7d91bc9a1e795b2/config.png)
 
-```bash
-python queuectl.py config set max_retries 5
-python queuectl.py config set backoff_base 3
-```
 ### 📊 System Status Overview
 
 The **System Status** command shows a real-time summary of all jobs and active workers.  
