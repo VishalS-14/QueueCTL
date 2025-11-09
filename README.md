@@ -63,6 +63,7 @@ Jobs were successfully added to the queue and listed under the **Pending** state
 
 ![Job Enqueue](https://github.com/VishalS-14/QueueCTL/blob/9c00b44fb4658afac3c3376a50448f6b298cc3c4/Enqueue.png)
 
+---
 
 ###  **Worker Execution & Job Processing**
 
@@ -93,8 +94,7 @@ Jobs in the **Dead Letter Queue (DLQ)** can be retried manually by moving them b
 
 ### Multiple Jobs Running Concurrently
 
-QueueCTL supports running **multiple worker processes** to handle several jobs at once.  
-Each worker picks different jobs from the queue, allowing true parallel job execution.
+QueueCTL supports running **multiple worker processes** to handle several jobs at once. Each worker picks different jobs from the queue, allowing true parallel job execution.
 
 ![Multiple jobs](https://github.com/VishalS-14/QueueCTL/blob/0054851d4a727240aa60ed6863d4907a610c4ad7/multiple_jobs.png)
 
@@ -118,8 +118,7 @@ The **System Status** command shows a real-time summary of all jobs and active w
 
 ### Web Dashboard — Real-Time Job Monitoring
 
-QueueCTL comes with a built-in **Web Dashboard** that lets you monitor all your jobs and workers in real time.  
-It provides a clean, auto-refreshing interface to visualize job activity without needing to check the CLI constantly.
+QueueCTL comes with a built-in **Web Dashboard** that lets you monitor all your jobs and workers in real time. It provides a clean, auto-refreshing interface to visualize job activity without needing to check the CLI constantly.
 
 ![Web_dashboard](https://github.com/VishalS-14/QueueCTL/blob/0e77bfdfd864c33bb68da37d30ff4d913e32eb68/dash.png)
 
