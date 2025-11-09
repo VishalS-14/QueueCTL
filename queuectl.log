@@ -1,0 +1,9 @@
+1762630492214:queuectl enqueue '{"id":"job1","command":"sleep 2"}'
+1762630498621:queuectl worker start --count 3
+1762630511012:queuectl worker stop
+1762630516694:queuectl status
+1762630588587:queuectl enqueue '{"id":"job1","command":"invalid"}'
+1762630608575:queuectl enqueue '{"id":"job2","command":"invalid"}'
+1762630637875:queuectl worker start --count 3
+1762630697405:queuectl dlq list
+1762630713750:queuectl dlq retry job2
